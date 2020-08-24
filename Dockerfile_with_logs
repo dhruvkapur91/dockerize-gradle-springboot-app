@@ -13,3 +13,4 @@ RUN echo "Stage 3"
 RUN ls -la /home/gradle/.gradle
 COPY src ./src
 RUN gradle -i bootJar
+RUN ls -ls /home/gradle/.gradle
