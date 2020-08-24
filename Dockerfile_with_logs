@@ -1,7 +1,7 @@
 FROM gradle:6.4.1-jdk14
 WORKDIR /project
 COPY build.gradle settings.gradle ./
-RUN echo whoami
+RUN echo `whoami`
 RUN echo "Stage 1"
 RUN ls -la /home/gradle/.gradle
 USER gradle
