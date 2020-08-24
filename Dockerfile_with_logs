@@ -3,8 +3,9 @@ RUN echo `whoami`
 RUN echo "Stage 1"
 RUN ls -la /home/gradle/.gradle
 USER gradle
-WORKDIR /project
-COPY build.gradle settings.gradle ./
+RUN mkdir /home/gradle/project
+WORKDIR /home/gradle/project
+COPY --chown=gradle:gradle build.gradle settings.gradle ./
 RUN echo "Stage 2"
 RUN ls -la /home/gradle/.gradle
 RUN gradle -i clean build

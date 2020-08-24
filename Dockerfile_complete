@@ -1,0 +1,6 @@
+FROM gradle:6.4.1-jdk14
+WORKDIR /project
+COPY build.gradle settings.gradle ./
+RUN gradle -i clean build
+COPY src ./src
+RUN gradle -i bootJar
